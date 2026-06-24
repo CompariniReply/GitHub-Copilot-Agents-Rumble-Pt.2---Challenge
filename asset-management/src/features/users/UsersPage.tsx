@@ -1,5 +1,4 @@
 import { useState, useMemo } from "react";
-import { useAuth } from "@/hooks/useAuth";
 import { mockUsers, mockDepartments, mockAssets } from "@/lib/mock-data";
 import {
   Table,
@@ -19,7 +18,6 @@ type SortField = "nome" | "cognome" | "email" | "reparto" | "sede" | "numAsset";
 type SortDir = "asc" | "desc";
 
 export function UsersPage() {
-  const { permissions } = useAuth();
   const [filterReparto, setFilterReparto] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState("");
   const [sortField, setSortField] = useState<SortField>("cognome");

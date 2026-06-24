@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, type ReactNode } from "react";
-import { cn } from "@/lib/utils";
-import { ChevronDown, LogOut, User } from "lucide-react";
+import { ChevronDown, LogOut } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 
 interface DropdownMenuProps {

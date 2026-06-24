@@ -106,7 +106,26 @@ npm -v
 
 ---
 
-## 🤖 L'agente da costruire
+## � Cosa è già pronto (usalo, non rifarlo)
+
+Per farti risparmiare tempo, una parte dell'impalcatura è **già nel progetto**: appoggiati a questi elementi invece di ricostruirli da zero.
+
+| Elemento | Dove | A cosa serve |
+|----------|------|--------------|
+| **Tipi di dominio** | [`src/lib/types.ts`](asset-management/src/lib/types.ts) | `Asset`, `AssetCategory`, `AssetStatus`, `RolePermissions`, ecc. |
+| **Dati mock** | [`src/lib/mock-data.ts`](asset-management/src/lib/mock-data.ts) | 34 asset, 10 utenti, 8 reparti già popolati. |
+| **Helper di dominio e formattazione** | [`src/lib/asset-helpers.ts`](asset-management/src/lib/asset-helpers.ts) | Categorie e stati pronti, **marche per categoria** (per il form), `formatCurrency` (€), `formatDate`/`parseDate`, mapping **stato → variante Badge** e **colori** per i grafici. |
+| **Export CSV pronto** | [`src/lib/csv.ts`](asset-management/src/lib/csv.ts) | `downloadCSV(nome, righe)` genera e scarica un CSV **già compatibile con Excel** (separatore `;` + BOM UTF-8) — risolve ASSET-017 a livello di utility, a te resta solo decidere *cosa* esportare. |
+| **Grafici pronti** | [`src/components/charts.tsx`](asset-management/src/components/charts.tsx) | `DonutChart`, `HorizontalBarChart`, `StackedBarChart` in SVG puro (nessuna dipendenza): passi i dati, pensano loro al rendering. Il **calcolo** dei dati (KPI, raggruppamenti) resta parte della challenge. |
+| **Componenti UI** | [`src/components/ui/`](asset-management/src/components/ui/) | `button`, `input`, `label`, `select`, `card`, `table`, `badge`, `dropdown-menu`. |
+| **Auth & permessi** | [`src/hooks/useAuth.tsx`](asset-management/src/hooks/useAuth.tsx) | Login, ruoli e `permissions` (`canCreate`, `canViewReports`, …) già funzionanti. |
+| **MCP shadcn/ui** | [`.vscode/mcp.json`](.vscode/mcp.json) | Server MCP **già configurato**: usalo per cercare e aggiungere i componenti che mancano (es. `dialog`, `pagination`, `textarea`). |
+
+> ✅ Il progetto parte con **`npm run lint` e `npm run build` puliti**: se vedi errori, sono introdotti dalle tue modifiche.
+
+---
+
+## �🤖 L'agente da costruire
 
 Parte integrante della sfida è creare **un agente Copilot dedicato** (`.github/agents/<nome>.agent.md`) che implementi il frontend di questa app secondo lo stack e lo stile sopra descritti.
 
@@ -129,7 +148,7 @@ Il progetto usa **shadcn/ui** e nell'ambiente è disponibile il **MCP server di 
 - **ottenere il comando di installazione** e aggiungere il componente al progetto (es. `npx shadcn@latest add <componente>`), che lo crea in `src/components/ui/`;
 - **riutilizzare** i componenti già presenti in `src/components/ui/` quando esistono, aggiungendone di nuovi solo se necessari per la challenge.
 
-> Suggerimento: per il Catalogo serviranno componenti come `table`, `dialog`/`sheet`, `form`, `pagination`; per la Dashboard componenti come `chart` e `card`. Usa l'MCP per individuarli e installarli, mantenendo lo stile coerente con quelli esistenti.
+> Suggerimento: per il Catalogo potrebbero servirti componenti come `dialog`/`sheet`, `form`, `pagination` (usa l'MCP per aggiungerli). Per la Dashboard i grafici sono **già pronti** in [`src/components/charts.tsx`](asset-management/src/components/charts.tsx): ti basta calcolare i dati e passarli ai componenti, mantenendo lo stile coerente con quelli esistenti.
 
 ---
 
