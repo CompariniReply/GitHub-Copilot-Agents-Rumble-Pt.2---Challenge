@@ -1,17 +1,5 @@
 // Utility condivise dai gate hook (skill / instruction).
-import {
-  readFileSync,
-  appendFileSync,
-  mkdirSync,
-  existsSync,
-} from "node:fs";
-import { fileURLToPath } from "node:url";
-import { dirname, join, resolve } from "node:path";
-
-const here = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(here, "..", "..");
-const scoringDir = join(repoRoot, "scoring");
-const eventsLog = join(scoringDir, "events.jsonl");
+import { readFileSync } from "node:fs";
 
 export function readStdin() {
   try {
@@ -50,15 +38,6 @@ export function pathsTouch(paths, needle) {
     if (/\s/.test(s)) return false;
     return s.replace(/\\/g, "/").toLowerCase().includes(n);
   });
-}
-
-export function logEvent(ev) {
-  try {
-    if (!existsSync(scoringDir)) mkdirSync(scoringDir, { recursive: true });
-    appendFileSync(eventsLog, JSON.stringify(ev) + "\n");
-  } catch {
-    /* il logging non deve mai rompere l'agente */
-  }
 }
 
 export function allow() {

@@ -9,7 +9,6 @@ import {
   parseInput,
   collectStrings,
   pathsTouch,
-  logEvent,
   allow,
   deny,
 } from "./gate-lib.mjs";
@@ -21,14 +20,6 @@ const paths = collectStrings(input.tool_input);
 if (!pathsTouch(paths, ".github/instructions/")) allow(); // non riguarda le instruction
 
 const locked = process.env.LOCK_INSTRUCTIONS !== "0";
-
-logEvent({
-  ts: new Date().toISOString(),
-  session: input.session_id ?? null,
-  tool: input.tool_name ?? null,
-  category: "instructions",
-  type: locked ? "blocked" : "unlocked_use",
-});
 
 if (locked) {
   deny(
