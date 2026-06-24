@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node scripts/scoring/token-logger.mjs",
+        "timeout": 15
+      }
+    ]
+  }
+}

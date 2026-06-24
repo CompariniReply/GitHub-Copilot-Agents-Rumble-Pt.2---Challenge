@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "node scripts/scoring/gate-instructions.mjs",
+        "env": {
+          "LOCK_INSTRUCTIONS": "1"
+        },
+        "timeout": 15
+      }
+    ]
+  }
+}

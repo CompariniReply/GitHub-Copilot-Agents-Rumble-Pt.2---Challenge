@@ -1,0 +1,6 @@
+# File privati dell'organizzatore — NON devono finire nei branch dei partecipanti
+evaluation-prompt.private.md
+*.private.md
+
+# Cache di build Vite (root)
+.vite/
