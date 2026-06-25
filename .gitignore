@@ -4,3 +4,6 @@ evaluation-prompt.private.md
 
 # Cache di build Vite (root)
 .vite/
+
+# Artefatti runtime scoring
+scoring/tokens.txt
