@@ -317,9 +317,9 @@
 **In modo da** avere una visione d'insieme dello stato dell'inventario.
 
 ### Criteri di Accettazione (BDD — Given/When/Then)
-- **Dato che** sono nella pagina Dashboard, **Quando** la pagina si carica, **Allora** vedo le seguenti card KPI: Totale Asset (150), Asset In Uso (98), Asset Disponibili (32), Asset In Manutenzione (12), Asset Dismessi (8).
-- **Dato che** sono nella Dashboard, **Quando** guardo la sezione grafici, **Allora** vedo un grafico a torta "Distribuzione per Categoria" (Laptop: 45, Monitor: 35, Smartphone: 25, Tablet: 15, Stampanti: 10, Server: 8, Accessori: 7, Rete: 5).
-- **Dato che** sono nella Dashboard, **Quando** guardo il grafico a barre "Asset per Reparto", **Allora** vedo: IT (42), Marketing (28), Vendite (25), HR (18), Amministrazione (15), Direzione (12), Produzione (10).
+- **Dato che** sono nella pagina Dashboard, **Quando** la pagina si carica, **Allora** vedo card KPI calcolate dai dati reali: Totale Asset, In Uso, Disponibili, In Manutenzione, Dismessi e Valore Totale Inventario.
+- **Dato che** sono nella Dashboard, **Quando** guardo la sezione grafici stato, **Allora** vedo la distribuzione per stato con valori dinamici derivati dagli asset correnti.
+- **Dato che** sono nella Dashboard, **Quando** i dati asset cambiano, **Allora** KPI e grafici si aggiornano automaticamente senza numeri hardcoded.
 
 ### Stima: 8 Story Points
 ### Priorità: Should
@@ -336,8 +336,9 @@
 **In modo da** pianificare acquisti e riallocazioni.
 
 ### Criteri di Accettazione (BDD — Given/When/Then)
-- **Dato che** sono nella sezione Report, **Quando** seleziono "Report per Reparto", **Allora** vedo una tabella con: Reparto, Numero Asset, Valore Totale (€), Asset più vecchio, Asset più recente.
-- **Dato che** visualizzo il report, **Quando** clicco su un reparto (es. "IT — 42 asset — €68.500,00"), **Allora** vedo il dettaglio con l'elenco di tutti gli asset di quel reparto.
+- **Dato che** sono nella sezione Report, **Quando** seleziono "Report per Reparto", **Allora** vedo una tabella con: Reparto, Totale Asset, In Uso, Disponibili, In Manutenzione, Dismessi.
+- **Dato che** visualizzo il report, **Quando** un asset non ha reparto assegnato, **Allora** viene raggruppato sotto "Non assegnato".
+- **Dato che** visualizzo il report, **Quando** guardo la sezione grafica reparto, **Allora** vedo una distribuzione stacked per reparto con segmenti per stato asset.
 
 ### Stima: 5 Story Points
 ### Priorità: Should
@@ -350,12 +351,13 @@
 **Titolo**: Export dati in CSV
 
 **Come** Admin,  
-**Voglio** esportare i dati del catalogo asset in formato CSV,  
+**Voglio** esportare i dati della dashboard e dei report in formato CSV,  
 **In modo da** poterli elaborare con strumenti esterni (Excel, Google Sheets).
 
 ### Criteri di Accettazione (BDD — Given/When/Then)
-- **Dato che** sono nella pagina Catalogo con filtri applicati (es. Categoria = "Laptop"), **Quando** clicco "Esporta CSV", **Allora** viene scaricato un file `asset_export_20260528.csv` contenente solo gli asset filtrati.
-- **Dato che** il file CSV è stato scaricato, **Quando** lo apro, **Allora** contiene le colonne: ID, Nome, Categoria, Marca, Modello, Numero Seriale, Stato, Assegnato A, Reparto, Data Acquisto, Costo, Garanzia Mesi.
+- **Dato che** sono nella Dashboard/Report e ho i permessi necessari, **Quando** clicco "Esporta CSV", **Allora** viene scaricato un file con i dati correnti di KPI, distribuzione per stato, distribuzione per categoria e report per reparto.
+- **Dato che** non ho permesso report, **Quando** apro la Dashboard, **Allora** il pulsante export non e visibile.
+- **Dato che** apro il file esportato in Excel, **Quando** lo visualizzo, **Allora** i dati sono tabellari, con intestazioni chiare e separatori compatibili.
 
 ### Stima: 3 Story Points
 ### Priorità: Should
@@ -372,8 +374,8 @@
 **In modo da** identificare trend e necessità di approvvigionamento.
 
 ### Criteri di Accettazione (BDD — Given/When/Then)
-- **Dato che** sono nella sezione Report, **Quando** seleziono "Distribuzione per Categoria", **Allora** vedo un grafico a barre impilate con le categorie sull'asse X e gli stati (Disponibile, In uso, Manutenzione, Dismesso) come segmenti colorati.
-- **Dato che** visualizzo il grafico, **Quando** passo il mouse su un segmento (es. "Laptop — In uso: 38"), **Allora** vedo un tooltip con il numero e la percentuale.
+- **Dato che** sono nella Dashboard, **Quando** apro la sezione "Distribuzione per Categoria", **Allora** vedo un grafico con il conteggio degli asset per categoria calcolato dai dati reali.
+- **Dato che** visualizzo il grafico, **Quando** cambiano gli asset disponibili, **Allora** i valori per categoria si aggiornano in tempo reale.
 
 ### Stima: 5 Story Points
 ### Priorità: Could

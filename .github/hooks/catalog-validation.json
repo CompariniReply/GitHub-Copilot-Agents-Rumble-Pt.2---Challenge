@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node scripts/scoring/token-logger.mjs",
+        "timeout": 15
+      },
+      {
+        "type": "command",
+        "command": "cd asset-management && npm run lint 2>&1 | tail -5 && npm run build 2>&1 | tail -10",
+        "timeout": 60
+      }
+    ]
+  }
+}
