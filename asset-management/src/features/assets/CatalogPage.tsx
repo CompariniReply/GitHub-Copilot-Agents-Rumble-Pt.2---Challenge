@@ -26,6 +26,7 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { Dialog, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { downloadCSV } from "@/lib/csv";
 import {
   Search,
   Plus,
@@ -35,6 +36,7 @@ import {
   ArrowUp,
   ArrowDown,
   X,
+  Download,
 } from "lucide-react";
 
 const PAGE_SIZE = 20;
@@ -165,12 +167,34 @@ export function CatalogPage() {
             Elenco completo degli asset aziendali
           </p>
         </div>
-        {permissions.canCreate && (
-          <Button onClick={() => setShowCreateForm(true)}>
-            <Plus className="h-4 w-4" />
-            Nuovo Asset
+        <div className="flex gap-2">
+          <Button variant="outline" onClick={() => {
+            const rows = filteredAssets.map((a) => ({
+              ID: a.id,
+              Nome: a.nome,
+              Categoria: a.categoria,
+              Marca: a.marca,
+              Modello: a.modello,
+              "Numero Seriale": a.numeroSeriale,
+              Stato: a.stato,
+              "Assegnato A": a.assegnatoA ?? "",
+              Reparto: a.reparto ?? "",
+              "Data Acquisto": a.dataAcquisto,
+              Costo: a.costo,
+              "Garanzia Mesi": a.garanziaMesi,
+            }));
+            downloadCSV("asset_export", rows);
+          }}>
+            <Download className="h-4 w-4" />
+            Esporta CSV
           </Button>
-        )}
+          {permissions.canCreate && (
+            <Button onClick={() => setShowCreateForm(true)}>
+              <Plus className="h-4 w-4" />
+              Nuovo Asset
+            </Button>
+          )}
+        </div>
       </div>
 
       {/* Notification */}
