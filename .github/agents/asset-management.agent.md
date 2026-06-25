@@ -344,3 +344,7 @@ Se ci sono errori di lint o build, correggerli prima di considerare il task comp
 - ❌ Non aggiungere `tailwind.config.js`
 - ❌ Non usare `console.log` in produzione
 - ❌ Non mostrare pulsanti di azione (Crea/Modifica/Elimina) a utenti senza permesso
+
+
+## NoBlockingHooks
+- Non introdurre hook di blocco su instruction/skills.
