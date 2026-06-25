@@ -1,0 +1,14 @@
+2026-06-25T16:33:57.300Z	b6d228c2-39f8-437c-a1b4-175fd11c8726	tokens=10173	chars=40690	source=transcript_chars/4
+2026-06-25T16:36:46.460Z	b6d228c2-39f8-437c-a1b4-175fd11c8726	tokens=15658	chars=62630	source=transcript_chars/4
+2026-06-25T16:40:29.359Z	b6d228c2-39f8-437c-a1b4-175fd11c8726	tokens=16566	chars=66262	source=transcript_chars/4
+2026-06-25T16:53:25.891Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=45218	chars=180873	source=transcript_chars/4
+2026-06-25T16:55:39.126Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=47438	chars=189751	source=transcript_chars/4
+2026-06-25T16:58:07.187Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=49340	chars=197358	source=transcript_chars/4
+2026-06-25T17:01:51.286Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=55684	chars=222735	source=transcript_chars/4
+2026-06-25T17:03:00.419Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=59378	chars=237513	source=transcript_chars/4
+2026-06-25T17:04:19.111Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=61076	chars=244305	source=transcript_chars/4
+2026-06-25T17:05:27.139Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=67718	chars=270871	source=transcript_chars/4
+2026-06-25T17:07:00.293Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=69842	chars=279369	source=transcript_chars/4
+2026-06-25T17:07:54.879Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=71208	chars=284833	source=transcript_chars/4
+2026-06-25T17:12:50.351Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=83034	chars=332135	source=transcript_chars/4
+2026-06-25T17:14:46.904Z	8fe17178-5970-4fe5-a45e-270409bed7f3	tokens=90033	chars=360132	source=transcript_chars/4
