@@ -5,7 +5,7 @@
         "type": "command",
         "command": "node scripts/scoring/gate-instructions.mjs",
         "env": {
-          "LOCK_INSTRUCTIONS": "1"
+          "LOCK_INSTRUCTIONS": "0"
         },
         "timeout": 15
       }

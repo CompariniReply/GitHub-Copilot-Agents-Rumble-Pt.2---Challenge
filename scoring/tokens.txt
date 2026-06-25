@@ -1,0 +1,4 @@
+2026-06-25T16:24:24.256Z	61776acf-ff36-4de0-b521-5f09673d37a7	tokens=1026	chars=4102	source=transcript_chars/4
+2026-06-25T16:58:28.634Z	61776acf-ff36-4de0-b521-5f09673d37a7	tokens=8356	chars=33424	source=transcript_chars/4
+2026-06-25T17:07:27.578Z	1749c7d4-2165-4fd4-beab-afcf097bfa26	tokens=31743	chars=126971	source=transcript_chars/4
+2026-06-25T17:10:34.031Z	2853653a-197f-46bb-a64d-7fd5bf29d743	tokens=15308	chars=61233	source=transcript_chars/4
