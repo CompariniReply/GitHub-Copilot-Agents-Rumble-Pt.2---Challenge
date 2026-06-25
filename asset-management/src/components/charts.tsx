@@ -99,6 +99,9 @@ export function DonutChart({ data, size = 200, thickness = 32 }: DonutChartProps
             />
             <span className="text-muted-foreground">{d.label}</span>
             <span className="font-medium text-foreground">{d.value}</span>
+            <span className="text-xs text-muted-foreground">
+              ({total > 0 ? Math.round((d.value / total) * 100) : 0}%)
+            </span>
           </li>
         ))}
       </ul>
@@ -174,6 +177,14 @@ export function StackedBarChart({ data }: StackedBarChartProps) {
     })
   );
 
+  const legendTotals = new Map<string, number>();
+  data.forEach((row) =>
+    row.segments.forEach((segment) => {
+      legendTotals.set(segment.label, (legendTotals.get(segment.label) ?? 0) + segment.value);
+    })
+  );
+  const allSegmentsTotal = [...legendTotals.values()].reduce((sum, value) => sum + value, 0);
+
   return (
     <div className="space-y-4" aria-labelledby={titleId}>
       <div className="space-y-3">
@@ -214,6 +225,9 @@ export function StackedBarChart({ data }: StackedBarChartProps) {
               style={{ backgroundColor: color }}
             />
             <span className="text-muted-foreground">{label}</span>
+            <span className="text-xs text-muted-foreground">
+              ({allSegmentsTotal > 0 ? Math.round(((legendTotals.get(label) ?? 0) / allSegmentsTotal) * 100) : 0}%)
+            </span>
           </li>
         ))}
       </ul>

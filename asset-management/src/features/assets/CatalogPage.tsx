@@ -34,11 +34,13 @@ import {
   ArrowUp,
   ChevronLeft,
   ChevronRight,
+  Download,
   Laptop2,
   PackagePlus,
   Search,
   X,
 } from "lucide-react";
+import { downloadCSV } from "@/lib/csv";
 
 type SortField =
   | "id"
@@ -85,7 +87,7 @@ function compareAssets(a: Asset, b: Asset, field: SortField, direction: SortDire
 }
 
 export function CatalogPage() {
-  const { permissions } = useAuth();
+  const { permissions, hasRole } = useAuth();
 
   const [assets, setAssets] = useState<Asset[]>(mockAssets);
   const [searchQuery, setSearchQuery] = useState("");
@@ -201,6 +203,25 @@ export function CatalogPage() {
   function closeCreateForm() {
     setIsCreateOpen(false);
     reset();
+  }
+
+  function exportFilteredAssetsCsv() {
+    const rows = sortedAssets.map((asset) => ({
+      ID: asset.id,
+      Nome: asset.nome,
+      Categoria: asset.categoria,
+      Marca: asset.marca,
+      Modello: asset.modello,
+      "Numero Seriale": asset.numeroSeriale,
+      Stato: asset.stato,
+      "Assegnato A": asset.assegnatoA ?? "",
+      Reparto: asset.reparto ?? "",
+      "Data Acquisto": asset.dataAcquisto,
+      Costo: asset.costo,
+      "Garanzia Mesi": asset.garanziaMesi,
+    }));
+
+    downloadCSV("asset_export", rows);
   }
 
   function toMockDateFormat(value: string) {
@@ -363,9 +384,17 @@ export function CatalogPage() {
             <p className="text-sm text-muted-foreground">
               {sortedAssets.length} asset trovati su {assets.length}
             </p>
-            <Button variant="outline" onClick={resetFilters}>
-              Reset filtri
-            </Button>
+            <div className="flex items-center gap-2">
+              {hasRole("Admin") && (
+                <Button variant="outline" onClick={exportFilteredAssetsCsv} disabled={sortedAssets.length === 0}>
+                  <Download className="h-4 w-4" />
+                  Esporta CSV
+                </Button>
+              )}
+              <Button variant="outline" onClick={resetFilters}>
+                Reset filtri
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>
