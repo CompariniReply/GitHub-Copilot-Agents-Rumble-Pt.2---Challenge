@@ -1,0 +1,8 @@
+2026-06-25T16:25:45.551Z	da7fc5b4-0a3b-4d21-bb83-ec7bec7f0d49	tokens=1879	chars=7517	source=transcript_chars/4
+2026-06-25T16:31:02.005Z	a5bb3e9f-043c-47c5-b22b-c3e91d905c34	tokens=7006	chars=28022	source=transcript_chars/4
+2026-06-25T16:36:31.033Z	a5bb3e9f-043c-47c5-b22b-c3e91d905c34	tokens=26139	chars=104555	source=transcript_chars/4
+2026-06-25T16:40:37.170Z	a5bb3e9f-043c-47c5-b22b-c3e91d905c34	tokens=34835	chars=139340	source=transcript_chars/4
+2026-06-25T16:51:38.450Z	ee73cf54-fb81-4445-80c6-e397e974d40b	tokens=31417	chars=125667	source=transcript_chars/4
+2026-06-25T16:54:22.037Z	ee73cf54-fb81-4445-80c6-e397e974d40b	tokens=33754	chars=135016	source=transcript_chars/4
+2026-06-25T17:02:14.051Z	6da0e13b-e532-4f84-ad08-0d28c36d09a3	tokens=17128	chars=68511	source=transcript_chars/4
+2026-06-25T17:07:12.224Z	6da0e13b-e532-4f84-ad08-0d28c36d09a3	tokens=17969	chars=71877	source=transcript_chars/4

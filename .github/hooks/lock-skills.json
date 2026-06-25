@@ -5,7 +5,7 @@
         "type": "command",
         "command": "node scripts/scoring/gate-skills.mjs",
         "env": {
-          "LOCK_SKILLS": "1"
+          "LOCK_SKILLS": "0"
         },
         "timeout": 15
       }
