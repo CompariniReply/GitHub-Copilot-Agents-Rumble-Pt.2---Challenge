@@ -82,8 +82,18 @@ export function CatalogPage() {
   }, [filteredAssets, currentPage]);
 
   // Reset pagina quando cambiano i filtri
-  const handleFilterChange = (setter: (val: any) => void, value: any) => {
-    setter(value);
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value);
+    setCurrentPage(1);
+  };
+
+  const handleCategoriaChange = (value: AssetCategory | "") => {
+    setFilterCategoria(value);
+    setCurrentPage(1);
+  };
+
+  const handleStatoChange = (value: AssetStatus | "") => {
+    setFilterStato(value);
     setCurrentPage(1);
   };
 
@@ -163,13 +173,13 @@ export function CatalogPage() {
           <Input
             placeholder="Cerca per nome, marca, modello o numero seriale..."
             value={searchQuery}
-            onChange={(e) => handleFilterChange(setSearchQuery, e.target.value)}
+            onChange={(e) => handleSearchChange(e.target.value)}
             className="pl-9"
           />
         </div>
         <Select
           value={filterCategoria}
-          onChange={(e) => handleFilterChange(setFilterCategoria, e.target.value as AssetCategory | "")}
+          onChange={(e) => handleCategoriaChange(e.target.value as AssetCategory | "")}
           className="w-full sm:w-48"
         >
           <option value="">Tutte le categorie</option>
@@ -181,7 +191,7 @@ export function CatalogPage() {
         </Select>
         <Select
           value={filterStato}
-          onChange={(e) => handleFilterChange(setFilterStato, e.target.value as AssetStatus | "")}
+          onChange={(e) => handleStatoChange(e.target.value as AssetStatus | "")}
           className="w-full sm:w-48"
         >
           <option value="">Tutti gli stati</option>
