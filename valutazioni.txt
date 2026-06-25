@@ -1,0 +1,73 @@
+================================================================================
+VALUTAZIONE CHALLENGE 1 — Classifica Branch Partecipanti
+Data valutazione: 2026-06-25T17:51:00Z
+================================================================================
+
+Pos | Branch/Partecipante | C1 (Skills) | C2 (Instructions) | C3 (Agent file) | Totale punti | Token (spareggio)
+----|---------------------|-------------|--------------------|-----------------|--------------|-----------------
+ 1  | SimoneScarcella     |     20      |        20          |       30        |      70      |    373.058
+ 2  | izabelalukaj        |     20      |        20          |       15        |      55      |     56.433
+ 3  | eleonora_cicalla    |     20      |         0          |       30        |      50      |    170.127
+ 4  | e.zovico            |      0      |         0          |       30        |      30      |    325.585
+ 5  | DavideSoldati       |      0      |         0          |       30        |      30      |  1.801.210
+ 6  | paolo.vanzago       |      0      |         0          |       30        |      30      |        N/D
+ 7  | cvisinoni           |      0      |         0          |       15        |      15      |        N/D
+ 8  | emanuele_papa       |      0      |         0          |       15        |      15      |    742.366
+ 9  | fralex              |      0      |         0          |       15        |      15      |        N/D
+10  | rPrincipe           |      0      |         0          |       15        |      15      |        N/D
+
+================================================================================
+DETTAGLIO CRITERI
+================================================================================
+
+Criterio 1 — Sblocco SKILL (max 20 pt)
+  20 pt se env.LOCK_SKILLS = "0" in .github/hooks/lock-skills.json
+  Sbloccato: SimoneScarcella, eleonora_cicalla, izabelalukaj
+  Non sbloccato (valore "1"): cvisinoni, e.zovico, emanuele_papa, fralex, paolo.vanzago, rPrincipe
+  File assente: DavideSoldati
+
+Criterio 2 — Sblocco INSTRUCTION (max 20 pt)
+  20 pt se env.LOCK_INSTRUCTIONS = "0" in .github/hooks/lock-instructions.json
+  Sbloccato: SimoneScarcella, izabelalukaj
+  Non sbloccato (valore "1"): cvisinoni, e.zovico, eleonora_cicalla, emanuele_papa, fralex, paolo.vanzago, rPrincipe
+  File assente: DavideSoldati
+
+Criterio 3 — File agente (max 30 pt = 15 tools + 15 shadcn)
+  Tools (almeno 1 voce nel campo tools del frontmatter YAML):
+    ✓ DavideSoldati (asset-management.agent.md: 8+ tools MCP shadcn)
+    ✓ SimoneScarcella (asset-management.agent.md: tools array inline)
+    ✓ e.zovico (catalog-builder.agent.md: tools field presente)
+    ✓ eleonora_cicalla (asset-frontend-implementer.agent.md: tools field presente)
+    ✓ paolo.vanzago (frontend.agent.md: tools field presente)
+    ✗ cvisinoni (labcamp.agent.md: nessun campo tools nel frontmatter)
+    ✗ emanuele_papa (asset-management-frontend.agent.md: nessun campo tools)
+    ✗ fralex (copilot-asset-management.agent.md: nessun campo tools)
+    ✗ izabelalukaj (asset-management-challenge.agent.md: nessun campo tools)
+    ✗ rPrincipe (asset-frontend.agent.md: nessun campo tools)
+
+  Shadcn (menzione di "shadcn" nel file agente):
+    ✓ Tutti i partecipanti menzionano shadcn nel corpo o frontmatter
+
+Criterio 4 — Token consumati (solo spareggio)
+  SimoneScarcella: 373.058
+  izabelalukaj: 56.433
+  eleonora_cicalla: 170.127
+  DavideSoldati: 1.801.210
+  e.zovico: 325.585
+  emanuele_papa: 742.366
+  cvisinoni: N/D (scoring/tokens.txt assente)
+  fralex: N/D (scoring/tokens.txt assente)
+  paolo.vanzago: N/D (scoring/tokens.txt assente)
+  rPrincipe: N/D (scoring/tokens.txt assente)
+
+================================================================================
+NOTE
+================================================================================
+
+- DavideSoldati: file .github/hooks/lock-skills.json e lock-instructions.json assenti
+  nel branch (C1=0, C2=0 per criterio di robustezza).
+- cvisinoni, fralex, paolo.vanzago, rPrincipe: file scoring/tokens.txt assente (Token=N/D).
+- Spareggio posizioni 4-6 (30 pt): e.zovico (325.585) precede DavideSoldati (1.801.210)
+  per token inferiori; paolo.vanzago ultimo con N/D (trattato come +∞).
+- Spareggio posizioni 7-10 (15 pt): emanuele_papa precede gli altri con token 742.366;
+  cvisinoni/fralex/rPrincipe con N/D ordinati alfabeticamente.

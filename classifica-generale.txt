@@ -1,0 +1,61 @@
+================================================================================
+CLASSIFICA GENERALE UNIFICATA (Challenge 1 + Challenge 2)
+Data valutazione: 2026-06-25T17:51:00Z
+================================================================================
+
+Pos | Partecipante     | C1+C2+C3 (R1) | N1    | Challenge2 (N2) | PUNTEGGIO GENERALE | Giudizio       | Token (spareggio)
+----|------------------|----------------|-------|-----------------|--------------------|-----------     |-----------------
+ 1  | SimoneScarcella  |       70       | 100.0 |       0         |        50.0        | Sufficiente    |    373.058
+ 2  | izabelalukaj     |       55       |  78.6 |       0         |        39.3        | Da rivedere    |     56.433
+ 3  | eleonora_cicalla |       50       |  71.4 |       0         |        35.7        | Da rivedere    |    170.127
+ 4  | e.zovico         |       30       |  42.9 |       0         |        21.4        | Da rivedere    |    325.585
+ 5  | DavideSoldati    |       30       |  42.9 |       0         |        21.4        | Da rivedere    |  1.801.210
+ 6  | paolo.vanzago    |       30       |  42.9 |       0         |        21.4        | Da rivedere    |        N/D
+ 7  | cvisinoni        |       15       |  21.4 |       0         |        10.7        | Da rivedere    |        N/D
+ 8  | emanuele_papa    |       15       |  21.4 |       0         |        10.7        | Da rivedere    |    742.366
+ 9  | fralex           |       15       |  21.4 |       0         |        10.7        | Da rivedere    |        N/D
+10  | rPrincipe        |       15       |  21.4 |       0         |        10.7        | Da rivedere    |        N/D
+
+================================================================================
+FORMULE APPLICATE
+================================================================================
+
+N1 = (R1 / 70) * 100   (arrotondato a 1 decimale)
+N2 = R2                 (già su scala 0-100; qui 0 perché Challenge 2 non valutata)
+PUNTEGGIO_GENERALE = (N1 + N2) / 2
+
+Fasce di giudizio:
+  0–40   → Da rivedere
+  41–60  → Sufficiente
+  61–75  → Buono
+  76–89  → Ottimo
+  90–100 → Eccellente
+
+================================================================================
+NOTE
+================================================================================
+
+- Challenge 2 mancante per TUTTI i partecipanti: nessuna valutazione di custom
+  agent (N2) è stata trovata nel repository. N2 = 0 per tutti. La classifica
+  riflette quindi solo la Challenge 1.
+
+- DavideSoldati: file .github/hooks/lock-skills.json e lock-instructions.json
+  assenti nel branch (C1=0, C2=0 per criterio di robustezza).
+
+- Token N/D (scoring/tokens.txt assente): cvisinoni, fralex, paolo.vanzago,
+  rPrincipe. Trattati come token = +∞ ai fini dello spareggio.
+
+- Spareggio posizioni 4-5-6 (PUNTEGGIO_GENERALE = 21.4):
+  e.zovico (token 325.585) precede DavideSoldati (token 1.801.210) per token
+  inferiori. paolo.vanzago (N/D = +∞) ultimo nel gruppo.
+
+- Spareggio posizioni 7-8-9-10 (PUNTEGGIO_GENERALE = 10.7):
+  emanuele_papa (token 742.366) è l'unico con token disponibili →
+  precede cvisinoni, fralex, rPrincipe (tutti N/D, ordinati alfabeticamente).
+
+- Matching branch ↔ autore: non essendo disponibile la valutazione Challenge 2,
+  non è stato necessario effettuare il matching. I partecipanti sono identificati
+  esclusivamente dal nome del branch.
+
+- Branch esclusi dalla valutazione: main, copilot/valutazione-partecipanti,
+  copilot/participant-branch (branch dell'organizzatore/sistema).
