@@ -131,7 +131,7 @@ export function HorizontalBarChart({ data }: HorizontalBarChartProps) {
               style={{
                 width: `${(d.value / max) * 100}%`,
                 backgroundColor: colorAt(i, d.color),
-              }}
+              } as React.CSSProperties}
             />
           </div>
         </div>
