@@ -1,0 +1,4 @@
+2026-06-25T16:18:51.976Z	d3eda72b-fb3d-417d-987a-20d84a6537e4	tokens=1863	chars=7451	source=transcript_chars/4
+2026-06-25T16:20:53.467Z	d3eda72b-fb3d-417d-987a-20d84a6537e4	tokens=3205	chars=12820	source=transcript_chars/4
+2026-06-25T16:21:49.631Z	d3eda72b-fb3d-417d-987a-20d84a6537e4	tokens=4360	chars=17441	source=transcript_chars/4
+2026-06-25T16:22:22.379Z	d3eda72b-fb3d-417d-987a-20d84a6537e4	tokens=5501	chars=22003	source=transcript_chars/4
